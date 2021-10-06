@@ -1,16 +1,10 @@
-.home-container{
-    color:  #E5E5E5;
-
-}
-
 .home-content{
     padding-left: 120px;
-    padding-top: 117px;
-    padding-bottom: 0px;
 }
 
 
 .home-title{
+    margin-top: 117px;
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
@@ -23,6 +17,8 @@
 
 
 .home-text{
+    margin-top: 26px;
+    margin-bottom: 40px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -32,3 +28,11 @@
     width: 612px;
     height: 216px;
 }
+
+p {
+    display: block;
+    margin-top: 0.8em;
+    margin-bottom: 0em;
+    margin-left: 0;
+    margin-right: 0;
+  }
