@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { textSpanEnd } from 'typescript';
-import Button from '../../core/components/Button';
+import React, { useState } from 'react';
 import { User } from '../../core/types/user';
 import { makeRequest } from '../../core/utils/request';
 import Navbar from '../Navbar';
@@ -17,10 +14,6 @@ const Search = () => {
     const [isActive, setIsActive] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-
-    useEffect(() => {
-        console.log(">>> mudou o user:", user);
-    }, [user]);
 
     const handleOnChance = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value);

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Button from '../../../../core/components/Button';
 import { User } from '../../../../core/types/user';
+import dayjs from "dayjs";
+
 import "./styles.scss"
 
 type Props = {
@@ -9,6 +10,10 @@ type Props = {
 }
 
 const UserDetails = ({ user }: Props) => {
+
+    const formatData = (data:string) => {       
+        return dayjs(data, 'YYYY-MM-DD').format('DD/MM/YYYY');
+    }
 
     return (
         <>
@@ -35,7 +40,7 @@ const UserDetails = ({ user }: Props) => {
                                 <h1 className="item-detail item-text"><b>Empresa:</b>&nbsp;{user?.company}</h1>
                                 <h1 className="item-detail item-text"><b>Website/Blog:</b>&nbsp;{user?.html_url}</h1>
                                 <h1 className="item-detail item-text"><b>Localidade:</b>&nbsp;{user?.location}</h1>
-                                <h1 className="item-detail item-text"><b>Membro deste:</b>&nbsp;{user?.created_at}</h1>
+                                <h1 className="item-detail item-text"><b>Membro deste:</b>&nbsp;{formatData(String(user?.created_at))}</h1>
                             </div>
                         </div>
                     </div>
