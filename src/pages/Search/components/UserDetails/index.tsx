@@ -10,11 +10,6 @@ type Props = {
 
 const UserDetails = ({ user }: Props) => {
 
-    const openUserGitHub = (userUrl?: String) => {
-
-        window.location.href = userUrl === undefined ? 'http://www.github.com/' : String(userUrl);
-    }
-
     return (
         <>
             <div className="user-details-table">
@@ -45,8 +40,15 @@ const UserDetails = ({ user }: Props) => {
                         </div>
                     </div>
                 </div>
-                <div className="row bottom-bar" onClick={() => openUserGitHub(user?.html_url)}>
-                        <Button text="Ver Perfil"  />
+                <div className="row bottom-bar">
+                       <a   
+                                
+                            href={user?.html_url === undefined ? 'http://www.github.com/' : user?.html_url}
+                            target="_blank"
+                            rel="noopener noreferrer" 
+                        >
+                            <Button text="Ver Perfil"  />
+                       </a>
                 </div>
             </div>
         </>
